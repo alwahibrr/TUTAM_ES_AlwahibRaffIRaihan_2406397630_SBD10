@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #9AB17A;
+  --color-secondary: #C3CC9B;
+  --color-tertiary: #E4DFB5;
+  --color-quaternary: #FBE8CE;
+}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.card {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide {
+  animation: fadeSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-28px) scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: float 9s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 13s ease-in-out infinite reverse;
+}
